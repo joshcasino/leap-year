@@ -64,6 +64,16 @@ var pigLeg = function(pigSentence) {
   return pigFinished.join(" ");
 }
 
+// binary converter
+var binBin = function(binString) {
+  var binCount = binString.length - 1;
+  var binBucket = 0;
+  for (var i = binCount; i >= 0; i--) {
+    binBucket += Math.pow(2, binCount - i) * parseInt(binString[i]);
+  }
+  return binBucket;
+}
+
 // Interface Code Ist Heer Mein Herr
 $(document).ready(function() {
   $("#leapForm").submit(function(event) {
@@ -79,4 +89,13 @@ $(document).ready(function() {
     $("#pigResult").text(pResult);
     event.preventDefault();
   });
+
+//binary form
+  $("#binForm").submit(function(event) {
+    var bInput = $("#binInput").val();
+    var bResult = binBin(bInput);
+    $("#binResult").text(bResult);
+    event.preventDefault();
+  });
+
 });
