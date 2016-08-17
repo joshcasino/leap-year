@@ -27,6 +27,7 @@ The year is also evenly divisible by 400. Then it is a leap year.
 * For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
 * If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
 * For words beginning with "y", treat "y" as a consonant.
+* Words that are numbers are passed as-is
 
 Starts with a vowel, adds "ay" to end / East / Eastay
 Starts with "y", treat "y" as consonant / Yeast / Eastyay
@@ -35,6 +36,7 @@ One or more consonants, move all to end and add "ay" / Tool / Ooltay
 One or more consonants, move all to end and add "ay" / Proper / Operpray
 First consonants with "qu", move "qu" to end and add "ay" / Quick / Ickquay
 First consonants include "qu" but doesn't start with "qu", add all consonants to end and add "ay" / Squid / Idsquay
+Consists of numeric characters, return the same / 1234 / 1234
 
 
 

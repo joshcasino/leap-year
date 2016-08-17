@@ -13,22 +13,21 @@ var isLeap = function(whatYear) {
   }
 };
 //Pigs Knees
-var vowels = ["a","e","i","o","u","A","E","I","O","U"];
 var isCon = function(letter) {
-  if (!vowels.includes(letter)) {
+  if (!/[aeiou]/i.test(letter)) {
     return true;
   } else {
     return false;
   }
 }
 var pigKnee = function(pigText) {
-  if (vowels.includes(pigText[0])) {
+  if (/[aeiou]/i.test(pigText[0])) {
     return pigText + "ay";
   }
-  else if (pigText[0].toLowerCase() === "y") {
+  else if (/[y]/i.test(pigText[0])) {
     return pigText.substring(1, pigText.length + 1) + "yay";
   }
-  else if ((pigText[0] + pigText[1]).toLowerCase() === "qu") {
+  else if (/^qu/i.test(pigText)) {
     return pigText.substring(2, pigText.length + 1) + "quay";
   }
   else
@@ -39,7 +38,7 @@ var pigKnee = function(pigText) {
       if (isCon(pigArray[i])) {
         firstCons.push(pigArray[i]);
       }
-      else if (pigArray[i] === "u") {
+      else if (/u/i.test(pigArray[i])) {
         firstCons.push(pigArray[i]);
       }
       else {
@@ -53,7 +52,6 @@ var pigLeg = function(pigSentence) {
   pigMatrix = pigSentence.split(" ");
   pigFinished = [];
   pigMatrix.forEach(function(pigElement) {
-    console.log(typeof parseInt(pigElement));
     if ($.isNumeric(pigElement)) {
       pigFinished.push(pigElement);
     }
