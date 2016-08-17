@@ -13,15 +13,16 @@ var isLeap = function(whatYear) {
   }
 };
 //Pigs Knees
+var vowels = new RegExp("[aeiouy]", "i");
 var isCon = function(letter) {
-  if (!/[aeiou]/i.test(letter)) {
+  if (!vowels.test(letter)) {
     return true;
   } else {
     return false;
   }
 }
 var pigKnee = function(pigText) {
-  if (/[aeiou]/i.test(pigText[0])) {
+  if (vowels.test(pigText[0])) {
     return pigText + "ay";
   }
   else if (/[y]/i.test(pigText[0])) {
