@@ -24,17 +24,28 @@ var isCon = function(letter) {
 var pigKnee = function(pigText) {
   if (vowels.includes(pigText[0])) {
     return pigText + "ay";
-  } else if (pigText[0].toLowerCase() === "y") {
+  }
+  else if (pigText[0].toLowerCase() === "y") {
     return pigText.substring(1, pigText.length + 1) + "yay";
   }
-  firstCons = [];
-  pigArray = pigText.split("");
-  for (var i = 0; i < pigText.length; i++ ) {
-    if (isCon(pigArray[i])) {
-      firstCons.push(pigArray[i]);
-    } else {
-      i = pigText.length;
-    }
+  else if ((pigText[0] + pigText[1]).toLowerCase() === "qu") {
+    return pigText.substring(2, pigText.length + 1) + "quay";
+  }
+  else
+  {
+    firstCons = [];
+    pigArray = pigText.split("");
+    for (var i = 0; i < pigText.length; i++ ) {
+      if (isCon(pigArray[i])) {
+        firstCons.push(pigArray[i]);
+      }
+      else if (pigArray[i] === "u") {
+        firstCons.push(pigArray[i]);
+      }
+      else {
+        i = pigText.length;
+      }
+  }
   };
   return pigText.substring(firstCons.length, pigText.length) + firstCons.join("") + "ay";
 };
