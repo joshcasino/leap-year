@@ -6,7 +6,20 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+### Specifications for Leap Year
+
+The user enters a year, then the program determines whether the year is a leap year or not and displays the result.
+
+#### Behavior / Input / Output
+
+The year can be evenly divided by 4;
+If the year can be evenly divided by 100, it is NOT a leap year, unless;
+The year is also evenly divisible by 400. Then it is a leap year.
+
+* Not a leap year / 1993 / false
+* Divisible by 4 / 2004 / true
+* Divisible by 400 / 2000 / true
+* Divisible by 100 / 1990 / false
 
 ## Setup/Installation Requirements
 
