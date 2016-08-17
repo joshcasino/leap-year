@@ -14,7 +14,12 @@ var isLeap = function(whatYear) {
 };
 //Pigs Knees
 var pigKnee = function(pigText) {
-
+  var vowels = ["a","e","i","o","u","A","E","I","O","U"];
+  if (vowels.includes(pigText[0])) {
+    return pigText + "ay";
+  } else if (pigText[0].toLowerCase() === "y") {
+    return pigText.substring(1, pigText.length + 1) + "yay";
+  }
 };
 
 // Interface Code Ist Heer Mein Herr
@@ -27,7 +32,7 @@ $(document).ready(function() {
   });
 //pig form
   $("#pigForm").submit(function(event) {
-    var  pInput = $("#pigInput").val();
+    var pInput = $("#pigInput").val();
     var pResult = pigKnee(pInput);
     $("#pigResult").text(pResult);
     event.preventDefault();
