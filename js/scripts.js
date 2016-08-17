@@ -49,6 +49,21 @@ var pigKnee = function(pigText) {
   };
   return pigText.substring(firstCons.length, pigText.length) + firstCons.join("") + "ay";
 };
+var pigLeg = function(pigSentence) {
+  pigMatrix = pigSentence.split(" ");
+  pigFinished = [];
+  pigMatrix.forEach(function(pigElement) {
+    console.log(typeof parseInt(pigElement));
+    if ($.isNumeric(pigElement)) {
+      pigFinished.push(pigElement);
+    }
+    else
+    {
+    pigFinished.push(pigKnee(pigElement));
+    }
+  });
+  return pigFinished.join(" ");
+}
 
 // Interface Code Ist Heer Mein Herr
 $(document).ready(function() {
@@ -61,7 +76,7 @@ $(document).ready(function() {
 //pig form
   $("#pigForm").submit(function(event) {
     var pInput = $("#pigInput").val();
-    var pResult = pigKnee(pInput);
+    var pResult = pigLeg(pInput);
     $("#pigResult").text(pResult);
     event.preventDefault();
   });
