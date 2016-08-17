@@ -12,7 +12,10 @@ var isLeap = function(whatYear) {
     return false;
   }
 };
+//Pigs Knees
+var pigKnee = function(pigText) {
 
+};
 
 // Interface Code Ist Heer Mein Herr
 $(document).ready(function() {
@@ -22,5 +25,11 @@ $(document).ready(function() {
     $("#leapResult").text(lResult);
     event.preventDefault();
   });
-
+//pig form
+  $("#pigForm").submit(function(event) {
+    var  pInput = $("#pigInput").val();
+    var pResult = pigKnee(pInput);
+    $("#pigResult").text(pResult);
+    event.preventDefault();
+  });
 });

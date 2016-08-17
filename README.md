@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _{Leap Pig}_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{Determines Leap Year and Latinizes Piggishly}, {August 17, 2016 (a leap year)}_
 
-#### By _**{List of contributors}**_
+#### By _**Josh & HK**_
 
 ## Description
 
@@ -20,6 +20,9 @@ The year is also evenly divisible by 400. Then it is a leap year.
 * Divisible by 4 / 2004 / true
 * Divisible by 400 / 2000 / true
 * Divisible by 100 / 1990 / false
+
+### Specifications for Pig Latin
+
 
 ## Setup/Installation Requirements
 
