@@ -74,6 +74,40 @@ var binBin = function(binString) {
   return binBucket;
 }
 
+// hex converter
+var hexDigit = function(hexLetter) {
+  hLetter = hexLetter.toLowerCase();
+  if (hLetter === "a") {
+    return 10;
+  }
+  else if (hLetter === "b") {
+    return 11;
+  }
+  else if (hLetter === "c") {
+    return 12;
+  }
+  else if (hLetter === "d") {
+    return 13;
+  }
+  else if (hLetter === "e") {
+    return 14;
+  }
+  else if (hLetter === "f") {
+    return 15;
+  } else {
+    return parseInt(hLetter);
+  }
+}
+var hexBin = function(hexString) {
+  var hexCount = hexString.length - 1;
+  var hexBucket = 0;
+  for (var j = hexCount; j >= 0; j--) {
+    hexBucket += Math.pow(16, hexCount - j) * hexDigit(hexString[j]);
+  }
+  return hexBucket;
+}
+
+
 // Interface Code Ist Heer Mein Herr
 $(document).ready(function() {
   $("#leapForm").submit(function(event) {
@@ -89,12 +123,18 @@ $(document).ready(function() {
     $("#pigResult").text(pResult);
     event.preventDefault();
   });
-
 //binary form
   $("#binForm").submit(function(event) {
     var bInput = $("#binInput").val();
     var bResult = binBin(bInput);
     $("#binResult").text(bResult);
+    event.preventDefault();
+  });
+//Hex form
+  $("#hexForm").submit(function(event) {
+    var hInput = $("#hexInput").val();
+    var hResult = hexBin(hInput);
+    $("#hexResult").text(hResult);
     event.preventDefault();
   });
 
